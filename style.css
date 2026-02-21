@@ -1,0 +1,40 @@
+a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: darkblue;
+}
+
+body {
+    margin-left: 0.1%; 
+    margin-right: 0.3%; 
+    margin-top: 0.1%;
+    padding: 0.1%;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 20px;
+    width: 100%;
+    min-height: 60px;
+    background-color: lightgray;
+}
+
+.main-logo {
+    margin-right: auto;
+}
+
+.top-bar {
+    padding: 0 15px;
+    display: flex;
+    gap: 15px; 
+}
+
+.menu {
+    margin-left: auto;
+}
