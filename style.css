@@ -27,6 +27,7 @@ body {
 
 .main-logo {
     margin-right: auto;
+    width: 20%;
 }
 
 .top-bar {
@@ -37,4 +38,5 @@ body {
 
 .menu {
     margin-left: auto;
+    width: 20%;
 }
