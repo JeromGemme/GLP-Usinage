@@ -10,7 +10,7 @@ a:hover {
 
 body {
     margin-left: 0.1%; 
-    margin-right: 0.3%; 
+    margin-right: 2.2%; 
     margin-top: 0.1%;
     padding: 0.1%;
 }
@@ -18,27 +18,42 @@ body {
 .banner {
     display: flex;
     align-items: center;
+    /* This creates the #1 --- #2#3#4 --- #5 layout */
     justify-content: space-between; 
-    padding: 0 20px;
+    
+    padding: 10px 20px;
     width: 100%;
-    min-height: 60px;
+    box-sizing: border-box; /* Prevents padding from adding to width */
     background-color: lightgray;
 }
 
-.main-logo {
-    margin-right: auto;
-    width: 20%;
+/* #1 Logo - Takes only the space it needs */
+.banner-text {
+    flex: 0 0 auto;
 }
 
+.main-logo img {
+    height: 50px; /* Force a height so it doesn't explode on zoom */
+    width: auto;
+    display: block;
+}
+
+/* #2, #3, #4 Container - Centered automatically */
 .top-bar {
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 33%;
-    width: 60%
+    justify-content: center;
+    gap: 40px; /* Use a fixed gap, NOT a percentage */
+    flex: 1;   /* Tells this middle section to take up available space */
 }
 
+/* Remove <h1> default margins so they don't push the banner taller */
+.top-bar h1, .menu h1 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* #5 Menu - Takes only the space it needs */
 .menu {
-    margin-left: auto;
-    width: 10%;
+    flex: 0 0 auto;
+    text-align: right;
 }
