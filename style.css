@@ -42,9 +42,15 @@ body {
     flex: 1; 
 }
 
-.top-bar a h1 {
+.top-bar a, h1 {
     white-space: nowrap;
-    font-size: 1.1rem; 
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 .menu {
