@@ -1,93 +1,176 @@
-
-
 body {
     margin-left: 0px; 
     margin-right: 0px; 
     margin-top: 0px;
     padding: 0px;
 }
-
 a {
     color: black;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 a:hover {
     color: darkblue;
 }
 
-/*
-.container {
-}
-*/
-
+/* ────BANNER─────────────────────────────────────────────── */
 .banner {
-    background-color: lightslategray;
-    column-gap: 0;
+    align-items: center;
+    background-color: #1a1e24;
     display: flex;
-    flex: 1; 
-    gap: 5%;
-    height: 100px;
+    height: 90px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden;                                          /* ← fix bug 1 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;    /* ← fix bug 2 */
+    width: 100%;
+}
+.banner.hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
+}
+.banner a {
+    color: #c8cdd4;                   /* cool silver */
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+.banner a:hover {
+    color: #5b9bd5;                   /* steel blue accent */
+}
+.banner-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-evenly;   /* auto-distributes space between all links */
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.banner-logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.banner-logo img {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+.banner-right {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-evenly;   /* same on the right side */
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+/* ────TILES──────────────────────────────────────────────── */
+.tile1 {
+    display: flex;
+    flex-direction: row;       /* image left, text right — side by side */
+    align-items: center;
     width: 100%;
 }
 
-.banner1 {
-    align-items: center;
+.tile-image1 {
+    flex: 1;                   /* takes half the space */
     display: flex;
-    flex: 1; 
-    gap: 5%;
-    height: 100px;
-    justify-content: left; 
-    margin-left: 20px;
+    overflow: hidden;          /* clips image cleanly to its box */
 }
 
-.banner2 {
-    background-color: lightslategray;
+.tile-image1 img {
+    width: 100%;               /* fills its container */
+    height: 100%;
+    object-fit: cover;         /* crops cleanly without stretching */
+    display: block;
+}
+
+.tile-text1 {
+    flex: 1;                   /* takes the other half */
+    padding: 40px 5%;          /* breathing room around the text */
     display: flex;
-    flex: 1; 
-    gap: 5%;
-    height: 100px;
-    justify-content: center; 
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.banner3 {
-    align-items: center;
+.tile-text1 h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);   /* scales with viewport */
+    font-weight: 700;
+    color: #1a1e24;
+    margin-bottom: 20px;
+}
+
+.tile-text1 p {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    color: #4a5260;
+    line-height: 1.8;          /* comfortable reading spacing */
+}
+
+/* ── DROPDOWN ───────────────────────────────────────────── */
+.menu-wrapper {
+    position: relative;   /* dropdown positions itself relative to this */
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: #c8cdd4;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.menu-btn:hover {
+    color: #5b9bd5;
+}
+
+.dropdown {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    background-color: #1a1e24;
+    border: 1px solid #2e3440;
+    border-top: 2px solid #5b9bd5; 
+    min-width: 160px;
+    z-index: 999;
+    flex-direction: column;
+}
+
+.dropdown a {
+    display: block;
+    padding: 12px 20px;
+    color: #c8cdd4;
+    font-size: 13px;
+    border-bottom: 1px solid #2e3440;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown a:last-child {
+    border-bottom: none;
+}
+
+.dropdown a:hover {
+    background-color: #2e3440;
+    color: #5b9bd5;
+}
+
+.dropdown.open {
     display: flex;
-    flex: 1; 
-    gap: 5%;
-    height: 100px;
-    justify-content: right; 
-    margin-right: 20px;
 }
-
-/*
-.services-banner {
-}
-*/
-
-/*
-.accueil-banner {
-}
-*/
-/*
-
-/*
-.contact-banner {
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
