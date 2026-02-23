@@ -291,3 +291,40 @@ a:hover {
 .end strong {
     color: #5b9bd5;
 }
+
+@media (max-width: 768px) {
+
+    .banner {
+        height: 60px;
+    }
+
+    .banner-logo img {
+        height: 50px;
+    }
+
+    /* Hide nav links on mobile — show only logo + menu button */
+    .banner-left {
+        display: none;
+    }
+
+    .banner-right {
+        justify-content: flex-end;
+        padding-right: 4vw;
+    }
+
+    /* Stack tile image above text instead of side by side */
+    .machines-tile1 {
+        flex-direction: column;
+    }
+
+    .machines-tile-image1 {
+        flex: 0 0 auto;
+        width: 100%;
+        min-height: 280px;
+    }
+
+    .machines-tile-text1 {
+        width: 100%;
+        padding: 30px 5%;
+    }
+}
